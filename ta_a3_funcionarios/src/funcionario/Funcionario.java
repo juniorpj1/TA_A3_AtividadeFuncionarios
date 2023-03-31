@@ -12,10 +12,6 @@ public class Funcionario {
 		this.valorHoraTrabalhada = validaValorHoraTrabalhada(valorHoraTrabalhada);
 	}
 
-	public void setHorasTrabalhadas(int horasTrabalhadas) {
-		this.horasTrabalhadas = validaHorasTrabalhadas(horasTrabalhadas);
-	}
-
 	private int validaHorasTrabalhadas(int horasTrabalhadas) {
 		if (horasTrabalhadas > 40) {
 			throw new IllegalArgumentException(
