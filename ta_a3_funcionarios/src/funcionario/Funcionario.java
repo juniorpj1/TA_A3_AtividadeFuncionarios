@@ -6,7 +6,7 @@ public class Funcionario {
 	private int horasTrabalhadas;
 	private double valorHoraTrabalhada;
 
-	public Funcionario(String nome, int horasTrabalhadas, double valorHora) {
+	public Funcionario(String nome, int horasTrabalhadas, double valorHoraTrabalhada) {
 		this.nome = nome;
 		this.horasTrabalhadas = validaHorasTrabalhadas(horasTrabalhadas);
 		this.valorHoraTrabalhada = validaValorHoraTrabalhada(valorHoraTrabalhada);
@@ -24,11 +24,9 @@ public class Funcionario {
 		double valorMinimo = 1320.0 * 0.04;
 		double valorMaximo = 1320.0 * 0.1;
 		if (valorHoraTrabalhada < valorMinimo || valorHoraTrabalhada > valorMaximo) {
-			throw new IllegalArgumentException(
-					String.format("Valor hora trabalhada deve estar entre %.2f e %.2f.", valorMinimo, valorMaximo));
+			throw new IllegalArgumentException(String.format("O valor hora trabalhada deve estar entre %.2f e %.2f.", valorMinimo, valorMaximo));
 		}
-		return valorHoraTrabalhada;
-
+		return valorHoraTrabalhada;	
 	}
 
 	public String getNome() {
