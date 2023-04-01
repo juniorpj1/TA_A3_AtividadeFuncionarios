@@ -41,4 +41,11 @@ public class Funcionario {
 		return this.valorHoraTrabalhada;
 	}
 
+	public void setNome(String nome) {
+        if (nome == null || nome.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nome inválido.");
+        }
+        this.nome = nome;
+    }
+
 }

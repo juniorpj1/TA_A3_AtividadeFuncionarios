@@ -23,4 +23,11 @@ public class FuncionarioTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new Funcionario("", 40, 60.0));
     }
 	
+	@Test
+    public void testSetNome() {
+        Funcionario f = new Funcionario("João", 40, 60.0);
+        f.setNome("José");
+        assertEquals("José", f.getNome());
+    }
+	
 }
