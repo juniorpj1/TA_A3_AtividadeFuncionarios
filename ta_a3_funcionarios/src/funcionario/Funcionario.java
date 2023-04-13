@@ -11,8 +11,16 @@ public class Funcionario {
 		this.horasTrabalhadas = validaHorasTrabalhadas(horasTrabalhadas);
 		this.valorHoraTrabalhada = validaValorHoraTrabalhada(valorHoraTrabalhada);
 	}
+	
+	public double calcularPagamento() {
+        double pagamento = valorHoraTrabalhada * horasTrabalhadas;
+        if (pagamento < 1320.0) {
+            pagamento = 1320.0;
+        }
+        return pagamento;
+    }
 
-	private int validaHorasTrabalhadas(int horasTrabalhadas) {
+	public int validaHorasTrabalhadas(int horasTrabalhadas) {
 		if (horasTrabalhadas > 40) {
 			throw new IllegalArgumentException(
 					"O número de horas trabalhadas por funcionários próprios deve ser menor ou igual a 40.");
@@ -20,7 +28,7 @@ public class Funcionario {
 		return horasTrabalhadas;
 	}
 
-	private double validaValorHoraTrabalhada(double valorHoraTrabalhada) {
+	public double validaValorHoraTrabalhada(double valorHoraTrabalhada) {
 		double valorMinimo = 1320.0 * 0.04;
 		double valorMaximo = 1320.0 * 0.1;
 		if (valorHoraTrabalhada < valorMinimo || valorHoraTrabalhada > valorMaximo) {
@@ -47,5 +55,15 @@ public class Funcionario {
         }
         this.nome = nome;
     }
+
+	public void setHorasTrabalhadas(int horasTrabalhadas) {
+		this.horasTrabalhadas = horasTrabalhadas;
+	}
+
+	public void setValorHoraTrabalhada(double valorHoraTrabalhada) {
+		this.valorHoraTrabalhada = valorHoraTrabalhada;
+	}
+	
+	
 
 }
